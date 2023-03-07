@@ -1,0 +1,9 @@
+.NavigationBar {
+    width: 100%;
+    background: black;
+    opacity: 0.75;
+    color: white;
+    /* Fix the bar at the top of the screen */
+    position: fixed;
+    top: 0;
+}
