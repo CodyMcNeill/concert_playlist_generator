@@ -1,18 +1,47 @@
 import React from "react";
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import * as ROUTES from "./constants/routes";
+import "./App.css";
 import NavigationBar from "./components/NavigationBar";
-import Hero from "./components/Hero";
+import SignUpForm from "./components/SignUpForm";
+// import NavigationBar2 from "./components/NavigationBar2";
+import Home from "./pages/Home";
+import HowItWorks from "./pages/HowItWorks";
+import Profile from "./pages/Profile";
+// import PrivateRouteOutlet from "./components/PrivateRoute";
+import GeneratorPage from "./pages/GeneratorPage";
+import SignInForm from "./components/SignInForm";
+import { useAuth } from "./context/AuthContext";
 
 function App() {
+  const {isLoading} = useAuth()
   return (
-    <div className="App">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
+    isLoading ? <h1>Content is loading...</h1> :
+    (
+    <BrowserRouter>
+      <div className="App">
         <NavigationBar />
-        <Hero />
-    </div>
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/home" element={<Home />} />
+          <Route path="/howitworks" element={<HowItWorks />}/>
+          <Route path='/profile' element={<Profile />}/>
+          <Route path='/signup' element={<SignUpForm />}/>
+          <Route path='/signin' element={<SignInForm/>}/>
+          <Route path='/generator' element={<GeneratorPage/>}/>
+          {/* <Route path='{ROUTES.GENERATOR}' element={
+          <PrivateRoute>
+            <GeneratorPage />
+          </PrivateRoute>}/> */}
+          {/* <Route path="/generator" element={<PrivateRouteOutlet />}>
+            <Route element={<GeneratorPage/>}/>
+            </Route> */}
+          {/* <Route path="*" element={<p>Path Not Resolved</p>} /> */}
+        </Routes>
+      </div>
+    </BrowserRouter>
+    )
   );
 }
 
 export default App;
-
