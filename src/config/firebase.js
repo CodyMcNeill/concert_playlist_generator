@@ -10,10 +10,10 @@ const firebaseConfig = {
   projectId: "spotify-playlist-generat-bef08",
   storageBucket: "spotify-playlist-generat-bef08.appspot.com",
   messagingSenderId: "915614477498",
-  appId: "1:915614477498:web:31095f9b5c42466ecd6683"
+  appId: "1:915614477498:web:31095f9b5c42466ecd6683",
 };
 
 // Initialize Firebase
-const firebase = Firebase.initializeApp(firebaseConfig)
+const firebase = Firebase.initializeApp(firebaseConfig);
 
 export { firebase };

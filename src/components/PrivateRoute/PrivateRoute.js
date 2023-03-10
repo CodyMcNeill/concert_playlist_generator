@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Navigate, Outlet } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
@@ -27,16 +26,15 @@ import * as ROUTES from "../../constants/routes";
 //   );
 // };
 
-
 function PrivateRoute({ children }) {
-    const auth = useAuth();
-    return auth ? children : <Navigate to="{ROUTES.SIGN_UP}" />;
-  };
+  const auth = useAuth();
+  return auth ? children : <Navigate to="{ROUTES.SIGN_UP}" />;
+}
 
-  function PrivateOutlet() {
-    const auth = useAuth();
-    return auth ? <Outlet /> : <Navigate to="{ROUTES.SIGN_UP}" />;
-  };
+function PrivateOutlet() {
+  const auth = useAuth();
+  return auth ? <Outlet /> : <Navigate to="{ROUTES.SIGN_UP}" />;
+}
 
 // export default PrivateRoute;
 export default PrivateOutlet;

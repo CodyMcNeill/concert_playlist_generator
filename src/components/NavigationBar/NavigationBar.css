@@ -1,10 +1,10 @@
 .NavigationBar {
-    width: 99%;
-    background: grey;
-    opacity: 0.75;
-    color: white;
-    /* Fix the bar at the top of the screen */
-    position: fixed;
-    top: 0;
-    text-decoration: none;
+  width: 99%;
+  background: grey;
+  opacity: 0.75;
+  color: white;
+  /* Fix the bar at the top of the screen */
+  position: fixed;
+  top: 0;
+  text-decoration: none;
 }

@@ -14,21 +14,21 @@ import SignInForm from "./components/SignInForm";
 import { useAuth } from "./context/AuthContext";
 
 function App() {
-  const {isLoading} = useAuth()
-  return (
-    isLoading ? <h1>Content is loading...</h1> :
-    (
+  const { isLoading } = useAuth();
+  return isLoading ? (
+    <h1>Content is loading...</h1>
+  ) : (
     <BrowserRouter>
       <div className="App">
         <NavigationBar />
         <Routes>
-          <Route path="/" element={<Home/>}/>
+          <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/howitworks" element={<HowItWorks />}/>
-          <Route path='/profile' element={<Profile />}/>
-          <Route path='/signup' element={<SignUpForm />}/>
-          <Route path='/signin' element={<SignInForm/>}/>
-          <Route path='/generator' element={<GeneratorPage/>}/>
+          <Route path="/howitworks" element={<HowItWorks />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/signup" element={<SignUpForm />} />
+          <Route path="/signin" element={<SignInForm />} />
+          <Route path="/generator" element={<GeneratorPage />} />
           {/* <Route path='{ROUTES.GENERATOR}' element={
           <PrivateRoute>
             <GeneratorPage />
@@ -40,7 +40,6 @@ function App() {
         </Routes>
       </div>
     </BrowserRouter>
-    )
   );
 }
 
